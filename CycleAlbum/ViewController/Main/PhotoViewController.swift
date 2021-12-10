@@ -11,6 +11,8 @@ class PhotoViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    let photoArray = ["photo01","photo02","photo03"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,18 +31,25 @@ extension PhotoViewController: UICollectionViewDelegate, UICollectionViewDelegat
     func collectionUISet() {
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        let nib = UINib(nibName: "\(PhotoCell.self)", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "\(PhotoCell.self)")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return photoArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        return UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(PhotoCell.self)", for: indexPath) as? PhotoCell else {
+            print("PhotoViewController Get cell Fail")
+            return UICollectionViewCell()
+        }
+        
+        cell.cellStyleSet(imageName: photoArray[indexPath.item])
+        
+        return cell
     }
-    
- 
-    
     
 }

@@ -9,9 +9,11 @@ import UIKit
 
 class PhotoCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var photoImage: UIImageView!
+    
+    
+    func cellStyleSet(imageName: String) {
+        photoImage.image = UIImage(named: imageName)
     }
 
 }
