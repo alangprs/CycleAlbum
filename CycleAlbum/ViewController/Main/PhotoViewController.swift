@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PhotoViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -17,14 +17,14 @@ class ViewController: UIViewController {
         initui()
     }
 
-    ///畫面設定
+    ///畫面設定 
     func initui() {
         collectionUISet()
     }
 
 }
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension PhotoViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionUISet() {
         collectionView.delegate = self
