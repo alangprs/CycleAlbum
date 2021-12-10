@@ -101,10 +101,11 @@
 			children = (
 				4DD999102763952200EE0835 /* AppDelegate.swift */,
 				4DD999122763952200EE0835 /* SceneDelegate.swift */,
-				4DD999142763952200EE0835 /* ViewController.swift */,
-				4DD999162763952200EE0835 /* Main.storyboard */,
 				4DD999192763952500EE0835 /* Assets.xcassets */,
 				4DD9991B2763952500EE0835 /* LaunchScreen.storyboard */,
+				4DD999422763AFE000EE0835 /* ViewController */,
+				4DD999412763AF7A00EE0835 /* Model */,
+				4DD999402763AF6B00EE0835 /* View */,
 				4DD9991E2763952500EE0835 /* Info.plist */,
 			);
 			path = CycleAlbum;
@@ -125,6 +126,37 @@
 				4DD999332763952500EE0835 /* CycleAlbumUITestsLaunchTests.swift */,
 			);
 			path = CycleAlbumUITests;
+			sourceTree = "<group>";
+		};
+		4DD999402763AF6B00EE0835 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4DD999412763AF7A00EE0835 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4DD999422763AFE000EE0835 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4DD999432763B00600EE0835 /* Main */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4DD999432763B00600EE0835 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4DD999142763952200EE0835 /* ViewController.swift */,
+				4DD999162763952200EE0835 /* Main.storyboard */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
