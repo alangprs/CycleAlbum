@@ -66,12 +66,6 @@ extension PhotoViewController: UICollectionViewDataSource, UICollectionViewDeleg
         }
         
         cell.cellStyleSet(imageName: photoArray[indexPath.item])
-        // 如果indexpath = 0 順著顯示， 如果indexPath = 最大數，播回 indexPath 0
-//        if indexPath.item == 0 {
-//            cell.cellStyleSet(imageName: photoArray[1])
-//        } else {
-//            cell.cellStyleSet(imageName: photoArray[indexPath.item])
-//        }
         return cell
     }
     
