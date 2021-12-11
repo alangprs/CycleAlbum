@@ -10,8 +10,9 @@ import UIKit
 class PhotoViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    var selcetPhoto: CGFloat = 0
     
-    let photoArray = ["photo01","photo02","photo03","photo01"]
+    let photoArray = ["photo03","photo01","photo02","photo03","photo01"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,12 +82,12 @@ extension PhotoViewController: UICollectionViewDataSource, UICollectionViewDeleg
         let scrollViewWidth = scrollView.frame.width
         
         if offSetx == 0 {
-            let contentOffsetMinX = scrollViewWidth * CGFloat(photoArray.count)
+            let contentOffsetMinX = scrollViewWidth * CGFloat(photoArray.count - 4)
             collectionView.contentOffset = CGPoint(x: contentOffsetMinX, y: 0)
         }
         
-        if offSetx == scrollViewWidth * CGFloat(photoArray.count + 1) {
-            collectionView.contentOffset = CGPoint(x: scrollViewWidth, y: 0)
+        if offSetx == scrollViewWidth * CGFloat(photoArray.count - 1) {
+            collectionView.contentOffset = CGPoint(x: scrollViewWidth * CGFloat(photoArray.count - 4), y: 0)
         }
         
     }
