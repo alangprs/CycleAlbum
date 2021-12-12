@@ -10,8 +10,9 @@ import UIKit
 class PhotoViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    var selcetPhoto: CGFloat = 0
     
-    let photoArray = ["photo01","photo02","photo03"]
+    let photoArray = ["photo03","photo01","photo02","photo03","photo01"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +51,7 @@ extension PhotoViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
     //item間隔距離
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -66,6 +67,23 @@ extension PhotoViewController: UICollectionViewDataSource, UICollectionViewDeleg
         
         cell.cellStyleSet(imageName: photoArray[indexPath.item])
         return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        //取得collectionView x 座標
+        let offSetx = collectionView.contentOffset.x
+        //取得scrollView 的寬度
+        let scrollViewWidth = scrollView.frame.width
+        
+        if offSetx == 0 {
+            let contentOffsetMinX = scrollViewWidth * CGFloat(photoArray.count - 4)
+            collectionView.contentOffset = CGPoint(x: contentOffsetMinX, y: 0)
+        }
+        
+        if offSetx == scrollViewWidth * CGFloat(photoArray.count - 1) {
+            collectionView.contentOffset = CGPoint(x: scrollViewWidth * CGFloat(photoArray.count - 4), y: 0)
+        }
+        
     }
     
 }
