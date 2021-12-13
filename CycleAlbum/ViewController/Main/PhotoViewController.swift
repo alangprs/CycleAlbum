@@ -75,13 +75,12 @@ extension PhotoViewController: UICollectionViewDataSource, UICollectionViewDeleg
         //取得scrollView 的寬度
         let scrollViewWidth = scrollView.frame.width
         
-        if offSetx == 0 {
-            let contentOffsetMinX = scrollViewWidth * CGFloat(photoArray.count - 4)
-            collectionView.contentOffset = CGPoint(x: contentOffsetMinX, y: 0)
-        }
-        
-        if offSetx == scrollViewWidth * CGFloat(photoArray.count - 1) {
-            collectionView.contentOffset = CGPoint(x: scrollViewWidth * CGFloat(photoArray.count - 4), y: 0)
+        //如果ｘ座標大於array倒數第二張，顯示array第一張圖片
+        if offSetx > scrollViewWidth * CGFloat(photoArray.count - 1) {
+            collectionView.contentOffset = CGPoint(x: scrollViewWidth, y: 0)
+            
+        } else if offSetx < scrollViewWidth { //如果x座標小於 0 ，顯示array 倒數第二張圖片
+            collectionView.contentOffset = CGPoint(x: scrollViewWidth * CGFloat(photoArray.count - 1), y: 0)
         }
         
     }
