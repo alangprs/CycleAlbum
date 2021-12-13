@@ -108,7 +108,6 @@
 				4DD999192763952500EE0835 /* Assets.xcassets */,
 				4DD9991B2763952500EE0835 /* LaunchScreen.storyboard */,
 				4DD999422763AFE000EE0835 /* ViewController */,
-				4DD999412763AF7A00EE0835 /* Model */,
 				4DD999402763AF6B00EE0835 /* View */,
 				4DD9991E2763952500EE0835 /* Info.plist */,
 			);
@@ -138,13 +137,6 @@
 				4DD999452763B8D500EE0835 /* PhotoCell */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		4DD999412763AF7A00EE0835 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		4DD999422763AFE000EE0835 /* ViewController */ = {
